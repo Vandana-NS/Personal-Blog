@@ -5,7 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blooger</title>
+<!------------------------------------------------------------------------------------------------->
+<script src="https://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
+    <style>
+    
+    
+    
+    .icon-bar{
+        position: fixed;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    .icon-bar a{
+        display: block; 
+        text-align: center;
+        transition: all 0.3s ease; 
+        color:rgba(30, 26, 241, 0.856);
+        font-size: 25px;
+        width:30px; 
+        height: 30px;
+        border-radius: 50%;
+        border:1px dashed rgba(13, 169, 241, 0.945);
+        margin-top: 20px;
+        padding: 25px;
+        } 
+    .icon-bar a:hover{
+        background: rgb(159, 193, 238); 
+        
+    }
+
+    
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+    .like__btn {
+  
+  background: #a8ccf0;
+  font-size: 0px;
+  text-align: center;
+  width:0px; 
+        height: 0px;
+        border:1px dashed rgba(13, 169, 241, 0.945);
+  border-radius: 50%;
+  margin-left: 1250px;
+  color: rgb(208, 210, 212);
+  outline: none;
+  border: none;
+  margin-top: -100px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+.share-btn{
+  position: fixed;
+  bottom: 200px;
+  right: 10px;
+  z-index: 1;
+}
+.share-btn span{
+    display: block; 
+        text-align: center;
+        transition: all 0.3s ease; 
+        color:rgba(30, 26, 241, 0.856);
+        font-size: 25px;
+        width:30px; 
+        height: 30px;
+        border-radius: 50%;
+        border:1px dashed rgba(13, 169, 241, 0.945);
+        margin-top: -60px;
+        padding: 25px;
+        
+        
+}
+.share-btn:hover span{
+    background: rgb(159, 193, 238);
+}
+.share-btn a span{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  border: 1px solid transparent;
+  background: #16a085;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.6s;
+}
+#click:checked ~ .share-btn a span{
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 23px;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
+}
+#click:checked ~ .share-btn a:nth-child(2) span{
+  bottom: 0px;
+  right: 80px;
+  background: rgb(187, 122, 167); 
+}
+#click:checked ~ .share-btn a:nth-child(3) span{
+  bottom: 65px;
+  right: 65px;
+  background: rgb(146, 108, 129); 
+}
+.share-btn a:nth-child(3) span{
+  transition-delay: 0.2s;
+}
+#click:checked ~ .share-btn a:nth-child(4) span{
+  bottom: 80px;
+  right: 0px;
+  background: rgb(185, 69, 127); 
+}
+.share-btn a:nth-child(4) span{
+  transition-delay: 0.4s;
+}
+#click{
+  display: none;
+}
+
+
+
+
+    </style>
+
+<!---------------------------------------------------------------------------------->
+    <title>Blogger</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="./css/all.css">
@@ -20,17 +149,48 @@
 
     <!-- Custom Style   -->
     <link rel="stylesheet" href="./css/Style.css">
+    
 
+
+   
 </head>
-
+<!--------------------------------------------------------------------------->
 <body>
 
+    <div class="icon-bar">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> 
+        <a href="https://www.youtube.com" ><i class="fa fa-youtube"></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+      
+        <a href="login.html"><i class="fa fa-comment"></i></a>
+        <a href="https://www.gmail.com"><i class="fa fa-envelope"></i></a>
+         <button class="like__btn"><a href="#"><span id="icon"><i class="far fa-thumbs-up"></i></span>
+        <span id="count">0</span> </a></button>    
+         
+    </div>
+
+    <div class="content">
+        
+        <input type="checkbox" id="click">
+        <label for="click" class="share-btn">
+          <span class="fas fa-share-alt"></span>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-whatsapp"></span></a>
+        </label>
+      </div>
+  
+
+      
+     
+<!------------------------------------------------------------------------->
+    
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
 
     <nav class="nav">
         <div class="nav-menu flex-row">
             <div class="nav-brand">
-                <a href="#" class="text-gray">Blooger</a>
+                <a href="#" class="text-gray">Blogger</a>
             </div>
             <div class="toggle-collapse">
                 <div class="toggle-icons">
@@ -43,31 +203,28 @@
                         <a href="#">Home</a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">Category</a>
+                        <a href="#about me">About</a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">Archive</a>
+                        <a href="#category-list">Category</a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">Pages</a>
+                        <a href="#pages">Pages</a>
                     </li>
-                    <li class="nav-link">
-                        <a href="#">Contact Us</a>
-                    </li>
+                   
+                        <li class="nav-link">
+                            <div><a href="login.html"><button>Login</button></a></div>
+                        </li>
                 </ul>
+                
             </div>
-            <div class="social text-gray">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+            
         </div>
     </nav>
-
+    
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-    <!----------------------------- Main Site Section ------------------------------>
+<!----------------------------- Main Site Section ------------------------------>
 
     <main>
 
@@ -75,9 +232,11 @@
 
         <section class="site-title">
             <div class="site-background" data-aos="fade-up" data-aos-delay="100">
-                <h3>Tours & Travels</h3>
-                <h1>Amazing Place on Earth</h1>
-                <button class="btn">Explore</button>
+                <h1>Wandering her way</h1>
+                <br>
+                
+                <h3> Dreaming of traveling alone? <br>Dive into my stories and find out what it’s like to go around the world <br>as a solo female traveller </h3>
+                
             </div>
         </section>
 
@@ -92,32 +251,34 @@
                         <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
                             <img src="./assets/Blog-post/post-1.jpg" alt="post-1">
                             <div class="blog-title">
-                                <h3>London Fashion week's continued the evolution</h3>
-                                <button class="btn btn-blog">Fashion</button>
+                                <h3>Italy : Land of marbles</h3>
+                                <button class="btn btn-blog"><a href = "italy.html" >Explore </a></button>
                                 <span>2 minutes</span>
+                                
+                                 
                             </div>
                         </div>
                         <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
                             <img src="./assets/Blog-post/post-3.jpg" alt="post-1">
                             <div class="blog-title">
-                                <h3>London Fashion week's continued the evolution</h3>
-                                <button class="btn btn-blog">Fashion</button>
+                                <h3>New york : Welcome to the concrete world</h3>
+                                <button class="btn btn-blog"><a href = "newyork.html" >Explore</a></button>
                                 <span>2 minutes</span>
                             </div>
                         </div>
                         <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
                             <img src="./assets/Blog-post/post-2.jpg" alt="post-1">
                             <div class="blog-title">
-                                <h3>London Fashion week's continued the evolution</h3>
-                                <button class="btn btn-blog">Fashion</button>
+                                <h3>Thailand : They say do what you love so I travel to thailand</h3>
+                                <button class="btn btn-blog"><a href = "thailand.html" >Explore</a></button>
                                 <span>2 minutes</span>
                             </div>
                         </div>
                         <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
-                            <img src="./assets/Blog-post/post-5.png" alt="post-1">
+                            <img src="./assets/Blog-post/post-4.jpeg" alt="post-1">
                             <div class="blog-title">
-                                <h3>London Fashion week's continued the evolution</h3>
-                                <button class="btn btn-blog">Fashion</button>
+                                <h3>Maldives : I wonder if maldives misses me!</h3>
+                                <button class="btn btn-blog"><a href = "maldives.html" >Explore</a></button>
                                 <span>2 minutes</span>
                             </div>
                         </div>
@@ -140,125 +301,113 @@
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
-                                <img src="./assets/Blog-post/blog1.png" class="img" alt="blog1">
+                                <img src="./assets/Blog-post/blog1.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
                                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 20,2019</span>
                                 <span>2 Commets</span>
                             </div>
                         </div>
                         <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
-                            </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                            <a href="#">Germany : Some call it Berlin, I call it HEAVEN</a>
+                            <p>Germany is a Western European country with a landscape of forests, rivers, mountain ranges and North Sea beaches.</p>
+                            <button class="btn post-btn"><a href = "germany.html" >Read More &nbsp; </a>
+                                <i class="fas fa-arrow-right"></i></button>
+                               
                         </div>
                     </div>
                     <hr>
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
-                                <img src="./assets/Blog-post/blog2.png" class="img" alt="blog1">
+                                <img src="./assets/Blog-post/blog2.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
                                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;March 16,2019</span>
                                 <span>7 Commets</span>
                             </div>
                         </div>
                         <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
+                            <a href="#">Explore france through my eyes </a>
+                            <p>France is one of the oldest nations on Earth and the most ethnically diverse country in Europe.
                             </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn post-btn"><a href = "france.html" >Read More &nbsp; </a><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <hr>
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
-                                <img src="./assets/Blog-post/blog3.png" class="img" alt="blog1">
+                                <img src="./assets/Blog-post/blog3.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
                                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 19, 2019</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;September 19,2019</span>
                                 <span>5 Commets</span>
                             </div>
                         </div>
                         <div class="post-title">
-                            <a href="#">New data recording system to better analyse road accidents</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
+                            <a href="#">You can't buy happiness but you can buy a ticket to Singapore</a>
+                            <p> Singapore is famous for being a global financial center, being among the most densely populated places in the world, having a world-class city airport with a waterfall, and a Botanic Garden that is a World Heritage Site.
                             </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn post-btn"><a href = "singapore.html" >Read More &nbsp; </a><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <hr>
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
-                                <img src="./assets/Blog-post/blog4.png" class="img" alt="blog1">
+                                <img src="./assets/Blog-post/blog4.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
                                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 21, 2019</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;Febraury 21,2020</span>
                                 <span>12 Commets</span>
                             </div>
                         </div>
                         <div class="post-title">
-                            <a href="#">New data recording system to better analyse road accidents</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
+                            <a href="#">If you can’t go to heaven, Switzerland is the next best thing</a>
+                            <p>Switzerland is a landlocked country in Central Europe. 
                             </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn post-btn"><a href = "switzerland.html" >Read More &nbsp; </a><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    <div class="pagination flex-row">
+                    <div class="pagination flex-row"><section id="pages">
                         <a href="#"><i class="fas fa-chevron-left"></i></a>
                         <a href="#" class="pages">1</a>
                         <a href="#" class="pages">2</a>
                         <a href="#" class="pages">3</a>
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                        <a href="#"><i class="fas fa-chevron-right"></i></a></section>
                     </div>
                 </div>
                 <aside class="sidebar">
                     <div class="category">
                         <h2>Category</h2>
+                        <section id="category-list">
                         <ul class="category-list">
                             <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                                <a href="#">Software</a>
-                                <span>(05)</span>
+                                <a href="#India : Trip to the land of gods">India</a>
+                                
                             </li>
                             <li class="list-items" data-aos="fade-left" data-aos-delay="200">
-                                <a href="#">Techonlogy</a>
-                                <span>(02)</span>
+                                <a href="#Sweden : Stockholm officialy has my heart">Sweden</a>
+                                
                             </li>
                             <li class="list-items" data-aos="fade-left" data-aos-delay="300">
-                                <a href="#">Lifestyle</a>
-                                <span>(07)</span>
+                                <a href="#Mexico : Making the best memories">Mexico</a>
+                                
                             </li>
                             <li class="list-items" data-aos="fade-left" data-aos-delay="400">
-                                <a href="#">Shopping</a>
-                                <span>(01)</span>
+                                <a href="#China : Where ancient knowledge meets modern healing">China</a>
+                                
                             </li>
                             <li class="list-items" data-aos="fade-left" data-aos-delay="500">
-                                <a href="#">Food</a>
-                                <span>(08)</span>
+                                <a href="#Spain : The beautiful country of wine and songs">Spain</a>
+                                
                             </li>
-                        </ul>
+                        </ul></section>
                     </div>
                     <div class="popular-post">
                         <h2>Popular Post</h2>
@@ -268,13 +417,13 @@
                                     <img src="./assets/popular-post/m-blog-1.jpg" class="img" alt="blog1">
                                 </div>
                                 <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,2020</span>
                                     <span>2 Commets</span>
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
+                               <section id = "Spain : The beautiful country of wine and songs">
+                                <a href="spain.html">Spain : The beautiful country of wine and songs</a></section>
                             </div>
                         </div>
                         <div class="post-content" data-aos="flip-up" data-aos-delay="300">
@@ -283,13 +432,13 @@
                                     <img src="./assets/popular-post/m-blog-2.jpg" class="img" alt="blog1">
                                 </div>
                                 <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,2020</span>
                                     <span>2 Commets</span>
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
+                                <section id = "China : Where ancient knowledge meets modern healing">
+                                <a href="#">China : Where ancient knowledge meets modern healing.</a></section>
                             </div>
                         </div>
                         <div class="post-content" data-aos="flip-up" data-aos-delay="400">
@@ -298,13 +447,13 @@
                                     <img src="./assets/popular-post/m-blog-3.jpg" class="img" alt="blog1">
                                 </div>
                                 <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,2020</span>
                                     <span>2 Commets</span>
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
+                                <section id = "Mexico : Making the best memories">
+                                <a href="mexico.html">Mexico : Making the best memories</a></section>
                             </div>
                         </div>
                         <div class="post-content" data-aos="flip-up" data-aos-delay="500">
@@ -313,28 +462,28 @@
                                     <img src="./assets/popular-post/m-blog-4.jpg" class="img" alt="blog1">
                                 </div>
                                 <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,2020</span>
                                     <span>2 Commets</span>
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
+                                <section id="Sweden : Stockholm officialy has my heart">
+                                <a href="sweeden.html">Sweden : Stockholm officialy has my heart</a></section>
                             </div>
                         </div>
                         <div class="post-content" data-aos="flip-up" data-aos-delay="600">
                             <div class="post-image">
                                 <div>
-                                    <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
+                                   <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
                                 </div>
                                 <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,2020</span>
                                     <span>2 Commets</span>
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
+                                <section id="India : Trip to the land of gods">
+                                <a href="india.html">India : Trip to the land of gods</a></section>
                             </div>
                         </div>
                     </div>
@@ -373,16 +522,15 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
-                <h2>About us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia atque nemo ad modi officiis
-                    iure, autem nulla tenetur repellendus.</p>
+            <div class="about me" data-aos="fade-right" data-aos-delay="200"><section id="about me">
+                <h2>About me</h2>
+                <p>Hi! I'm Sophia, a former journalist who's now an award-winning travel blogger. I'm on a mission to see as much of the world as possible, in order to show YOU how you can fit more travel and adventure into the lifestyle you already have.</p></section>
             </div>
             <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
-                <h2>Newsletter</h2>
+                <h2>Notify me</h2>
                 <p>Stay update with our latest</p>
                 <div class="form-element">
-                    <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+                    <input type="text" placeholder="Email"><span><i class="fa fa-bell"></i></span>
                 </div>
             </div>
             <div class="instagram" data-aos="fade-left" data-aos-delay="200">
@@ -399,23 +547,19 @@
                 </div>
             </div>
             <div class="follow" data-aos="fade-left" data-aos-delay="200">
-                <h2>Follow us</h2>
+                <h2>Follow me</h2>
                 <p>Let us be Social</p>
                 <div>
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-youtube"></i>
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="rights flex-row">
-            <h4 class="text-gray">
-                Copyright ©2019 All rights reserved | made by
-                <a href="www.youtube.com/c/dailytuition" target="_black">Daily Tuition <i class="fab fa-youtube"></i>
-                    Channel</a>
-            </h4>
-        </div>
+            
+        
         <div class="move-up">
             <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
         </div>
@@ -434,6 +578,7 @@
 
     <!-- Custom Javascript file -->
     <script src="./js/main.js"></script>
-</body>
+    
+    </body>
 
 </html>

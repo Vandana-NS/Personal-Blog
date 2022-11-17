@@ -46,3 +46,39 @@ $(document).ready(function () {
     AOS.init();
 
 });
+const likeBtn = document.querySelector(".like__btn");
+let likeIcon = document.querySelector("#icon"),
+  count = document.querySelector("#count");
+
+let clicked = false;
+
+
+likeBtn.addEventListener("click", () => {
+  if (!clicked) {
+    clicked = true;
+    likeIcon.innerHTML = `<i class="fas fa-thumbs-up"></i>`;
+    count.textContent++;
+  } else {
+    clicked = false;
+    likeIcon.innerHTML = `<i class="far fa-thumbs-up"></i>`;
+    count.textContent--;
+  }
+});
+
+function validate()
+{
+var username=document.getElementById("username").value;
+var password=document.getElementById("password").value;
+if(username=="admin"&& password=="user")
+{
+    alert("login succesfully");
+    return false;
+
+}
+else
+{
+    alert("login failed");
+}
+
+
+}
